@@ -1,0 +1,183 @@
+service: performance
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  profile: default
+  timeout: 300
+  versionFunctions: false
+  reservedConcurrency: 2
+
+# needs more granular excluding in production as only the serverless provider npm
+# package should be excluded (and not the whole node_modules directory)
+package:
+  exclude:
+    - node_modules/serverless-azure-functions/**
+    - node_modules/serverless-google-cloudfunctions/**
+    - node_modules/serverless-openwhisk/**
+    - .gitignore
+    - .git/**
+
+functions:
+  hello128:
+    handler: aws.hello128
+    events:
+      - http: GET hello128
+    memorySize: 128
+
+  fibo128:
+    handler: aws.fibo128
+    events:
+      - http: GET fibo128
+    memorySize: 128
+  fibo256:
+    handler: aws.fibo256
+    events:
+      - http: GET fibo256
+    memorySize: 256
+  fibo512:
+    handler: aws.fibo512
+    events:
+      - http: GET fibo512
+    memorySize: 512
+  fibo1024:
+    handler: aws.fibo1024
+    events:
+      - http: GET fibo1024
+    memorySize: 1024
+  fibo2048:
+    handler: aws.fibo2048
+    events:
+      - http: GET fibo2048
+    memorySize: 2048
+
+  fft128:
+    handler: aws.fft128
+    events:
+      - http: GET fft128
+    memorySize: 128
+  fft256:
+    handler: aws.fft256
+    events:
+      - http: GET fft256
+    memorySize: 256
+  fft512:
+    handler: aws.fft512
+    events:
+      - http: GET fft512
+    memorySize: 512
+  fft1024:
+    handler: aws.fft1024
+    events:
+      - http: GET fft1024
+    memorySize: 1024
+  fft2048:
+    handler: aws.fft2048
+    events:
+      - http: GET fft2048
+    memorySize: 2048
+
+  pi128:
+    handler: aws.pi128
+    events:
+      - http: GET pi128
+    memorySize: 128
+  pi256:
+    handler: aws.pi256
+    events:
+      - http: GET pi256
+    memorySize: 256
+  pi512:
+    handler: aws.pi512
+    events:
+      - http: GET pi512
+    memorySize: 512
+  pi1024:
+    handler: aws.pi1024
+    events:
+      - http: GET pi1024
+    memorySize: 1024
+  pi2048:
+    handler: aws.pi2048
+    events:
+      - http: GET pi2048
+    memorySize: 2048
+
+  matrix128:
+    handler: aws.matrix128
+    events:
+      - http: GET matrix128
+    memorySize: 128
+  matrix256:
+    handler: aws.matrix256
+    events:
+      - http: GET matrix256
+    memorySize: 256
+  matrix512:
+    handler: aws.matrix512
+    events:
+      - http: GET matrix512
+    memorySize: 512
+  matrix1024:
+    handler: aws.matrix1024
+    events:
+      - http: GET matrix1024
+    memorySize: 1024
+  matrix2048:
+    handler: aws.matrix2048
+    events:
+      - http: GET matrix2048
+    memorySize: 2048
+
+  sleep128:
+    handler: aws.sleep128
+    events:
+      - http: GET sleep128
+    memorySize: 128
+  sleep256:
+    handler: aws.sleep256
+    events:
+      - http: GET sleep256
+    memorySize: 256
+  sleep512:
+    handler: aws.sleep512
+    events:
+      - http: GET sleep512
+    memorySize: 512
+  sleep1024:
+    handler: aws.sleep1024
+    events:
+      - http: GET sleep1024
+    memorySize: 1024
+  sleep2048:
+    handler: aws.sleep2048
+    events:
+      - http: GET sleep2048
+    memorySize: 2048
+
+  unionfind128:
+    handler: aws.unionfind128
+    events:
+      - http: GET unionfind128
+    memorySize: 128
+  unionfind256:
+    handler: aws.unionfind256
+    events:
+      - http: GET unionfind256
+    memorySize: 256
+  unionfind512:
+    handler: aws.unionfind512
+    events:
+      - http: GET unionfind512
+    memorySize: 512
+  unionfind1024:
+    handler: aws.unionfind1024
+    events:
+      - http: GET unionfind1024
+    memorySize: 1024
+  unionfind2048:
+    handler: aws.unionfind2048
+    events:
+      - http: GET unionfind2048
+    memorySize: 2048

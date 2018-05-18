@@ -1,0 +1,184 @@
+service: performance
+
+provider:
+  name: google
+  runtime: nodejs
+  project: thesis-serverless
+  timeout: 540s
+  credentials: .gcloud/keyfile.json
+  labels:
+    application: Serverless Performance Example
+
+plugins:
+  - serverless-google-cloudfunctions
+
+# needs more granular excluding in production as only the serverless provider npm
+# package should be excluded (and not the whole node_modules directory)
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+
+functions:
+  hello128:
+    handler: hello128
+    events:
+      - http: path
+    memorySize: 128
+
+  fft128:
+    handler: fft128
+    events:
+      - http: path
+    memorySize: 128
+  fft256:
+    handler: fft256
+    events:
+      - http: path
+    memorySize: 256
+  fft512:
+    handler: fft512
+    events:
+      - http: path
+    memorySize: 512
+  fft1024:
+    handler: fft1024
+    events:
+      - http: path
+    memorySize: 1024
+  fft2048:
+    handler: fft2048
+    events:
+      - http: path
+    memorySize: 2048
+
+  fibo128:
+    handler: fibo128
+    events:
+      - http: path
+    memorySize: 128
+  fibo256:
+    handler: fibo256
+    events:
+      - http: path
+    memorySize: 256
+  fibo512:
+    handler: fibo512
+    events:
+      - http: path
+    memorySize: 512
+  fibo1024:
+    handler: fibo1024
+    events:
+      - http: path
+    memorySize: 1024
+  fibo2048:
+    handler: fibo2048
+    events:
+      - http: path
+    memorySize: 2048
+
+  matrix128:
+    handler: matrix128
+    events:
+      - http: path
+    memorySize: 128
+  matrix256:
+    handler: matrix256
+    events:
+      - http: path
+    memorySize: 256
+  matrix512:
+    handler: matrix512
+    events:
+      - http: path
+    memorySize: 512
+  matrix1024:
+    handler: matrix1024
+    events:
+      - http: path
+    memorySize: 1024
+  matrix2048:
+    handler: matrix2048
+    events:
+      - http: path
+    memorySize: 2048
+
+  pi128:
+    handler: pi128
+    events:
+      - http: path
+    memorySize: 128
+  pi256:
+    handler: pi256
+    events:
+      - http: path
+    memorySize: 256
+  pi512:
+    handler: pi512
+    events:
+      - http: path
+    memorySize: 512
+  pi1024:
+    handler: pi1024
+    events:
+      - http: path
+    memorySize: 1024
+  pi2048:
+    handler: pi2048
+    events:
+      - http: path
+    memorySize: 2048
+
+  sleep128:
+    handler: sleep128
+    events:
+      - http: path
+    memorySize: 128
+  sleep256:
+    handler: sleep256
+    events:
+      - http: path
+    memorySize: 256
+  sleep512:
+    handler: sleep512
+    events:
+      - http: path
+    memorySize: 512
+  sleep1024:
+    handler: sleep1024
+    events:
+      - http: path
+    memorySize: 1024
+  sleep2048:
+    handler: sleep2048
+    events:
+      - http: path
+    memorySize: 2048
+
+  unionfind128:
+    handler: unionfind128
+    events:
+      - http: path
+    memorySize: 128
+  unionfind256:
+    handler: unionfind256
+    events:
+      - http: path
+    memorySize: 256
+  unionfind512:
+    handler: unionfind512
+    events:
+      - http: path
+    memorySize: 512
+  unionfind1024:
+    handler: unionfind1024
+    events:
+      - http: path
+    memorySize: 1024
+  unionfind2048:
+    handler: unionfind2048
+    events:
+      - http: path
+    memorySize: 2048

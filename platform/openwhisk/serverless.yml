@@ -1,0 +1,245 @@
+service: performance
+
+# self-hosted option
+provider:
+  name: openwhisk
+  ignore_certs: true
+  timeout: 300
+
+plugins:
+  - serverless-openwhisk
+
+# needs more granular excluding in production as only the serverless provider npm
+# package should be excluded (and not the whole node_modules directory)
+package:
+  exclude:
+    - node_modules/serverless-azure-functions/**
+    - node_modules/serverless-google-cloudfunctions/**
+    - node_modules/serverless-openwhisk/**
+    - .gitignore
+    - .git/**
+
+functions:
+  hello128:
+    handler: openwhisk.hello128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /hello128
+    memory: 128
+
+  fibo128:
+    handler: openwhisk.fibo128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fibo128
+    memory: 128
+  fibo256:
+    handler: openwhisk.fibo256
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fibo256
+    memory: 256
+  fibo512:
+    handler: openwhisk.fibo512
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fibo512
+    memory: 512
+  fibo1024:
+    handler: openwhisk.fibo1024
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fibo1024
+    memory: 512
+  fibo2048:
+    handler: openwhisk.fibo2048
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fibo2048
+    memory: 512
+
+  fft128:
+    handler: openwhisk.fft128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fft128
+    memory: 128
+  fft256:
+    handler: openwhisk.fft256
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fft256
+    memory: 256
+  fft512:
+    handler: openwhisk.fft512
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fft512
+    memory: 512
+  fft1024:
+    handler: openwhisk.fft1024
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fft1024
+    memory: 512
+  fft2048:
+    handler: openwhisk.fft2048
+    annotations:
+      web-export: true
+    events:
+      - http: GET /fft2048
+    memory: 512
+
+  matrix128:
+    handler: openwhisk.matrix128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /matrix128
+    memory: 128
+  matrix256:
+    handler: openwhisk.matrix256
+    annotations:
+      web-export: true
+    events:
+      - http: GET /matrix256
+    memory: 256
+  matrix512:
+    handler: openwhisk.matrix512
+    annotations:
+      web-export: true
+    events:
+      - http: GET /matrix512
+    memory: 512
+  matrix1024:
+    handler: openwhisk.matrix1024
+    annotations:
+      web-export: true
+    events:
+      - http: GET /matrix1024
+    memory: 512
+  matrix2048:
+    handler: openwhisk.matrix2048
+    annotations:
+      web-export: true
+    events:
+      - http: GET /matrix2048
+    memory: 512
+
+  pi128:
+    handler: openwhisk.pi128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /pi128
+    memory: 128
+  pi256:
+    handler: openwhisk.pi256
+    annotations:
+      web-export: true
+    events:
+      - http: GET /pi256
+    memory: 256
+  pi512:
+    handler: openwhisk.pi512
+    annotations:
+      web-export: true
+    events:
+      - http: GET /pi512
+    memory: 512
+  pi1024:
+    handler: openwhisk.pi1024
+    annotations:
+      web-export: true
+    events:
+      - http: GET /pi1024
+    memory: 512
+  pi2048:
+    handler: openwhisk.pi2048
+    annotations:
+      web-export: true
+    events:
+      - http: GET /pi2048
+    memory: 512
+
+  sleep128:
+    handler: openwhisk.sleep128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /sleep128
+    memory: 128
+  sleep256:
+    handler: openwhisk.sleep256
+    annotations:
+      web-export: true
+    events:
+      - http: GET /sleep256
+    memory: 256
+  sleep512:
+    handler: openwhisk.sleep512
+    annotations:
+      web-export: true
+    events:
+      - http: GET /sleep512
+    memory: 512
+  sleep1024:
+    handler: openwhisk.sleep1024
+    annotations:
+      web-export: true
+    events:
+      - http: GET /sleep1024
+    memory: 512
+  sleep2048:
+    handler: openwhisk.sleep2048
+    annotations:
+      web-export: true
+    events:
+      - http: GET /sleep2048
+    memory: 512
+
+  unionfind128:
+    handler: openwhisk.unionfind128
+    annotations:
+      web-export: true
+    events:
+      - http: GET /unionfind128
+    memory: 128
+  unionfind256:
+    handler: openwhisk.unionfind256
+    annotations:
+      web-export: true
+    events:
+      - http: GET /unionfind256
+    memory: 256
+  unionfind512:
+    handler: openwhisk.unionfind512
+    annotations:
+      web-export: true
+    events:
+      - http: GET /unionfind512
+    memory: 512
+  unionfind1024:
+    handler: openwhisk.unionfind1024
+    annotations:
+      web-export: true
+    events:
+      - http: GET /unionfind1024
+    memory: 512
+  unionfind2048:
+    handler: openwhisk.unionfind2048
+    annotations:
+      web-export: true
+    events:
+      - http: GET /unionfind2048
+    memory: 512

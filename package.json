@@ -1,0 +1,20 @@
+{
+  "name": "faas-mubenchmark",
+  "version": "0.1.0",
+  "description": "Benchmarking different Cloud Service Providers",
+  "main": "index.js",
+  "repository": "github:timonback/faas-mubenchmark",
+  "scripts": {
+    "postinstall": "npm link serverless-openwhisk serverless-google-cloudfunctions serverless-azure-functions",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Timon Back",
+  "url": "http://github.com/timonback",
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "^6.0.0",
+    "bluebird": "^3.5.1",
+    "fft-js": "0.0.11",
+    "union-find": "^1.0.2"
+  }
+}

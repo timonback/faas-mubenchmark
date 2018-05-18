@@ -1,0 +1,213 @@
+service: performance-thesis
+
+provider:
+  name: azure
+  location: Central US
+
+plugins:
+  - serverless-azure-functions
+
+package:
+  exclude:
+    - .gitignore
+    - .git/**
+    - .gcloud/**
+    - node_modules/serverless-azure-functions/**
+    - node_modules/serverless-google-cloudfunctions/**
+    - node_modules/serverless-openwhisk/**
+    - package.json
+    - platform/**
+
+functions:
+  hello128:
+    handler: azure.hello128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+
+  fibo128:
+    handler: azure.fibo128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fibo256:
+    handler: azure.fibo256
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fibo512:
+    handler: azure.fibo512
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fibo1024:
+    handler: azure.fibo1024
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fibo2048:
+    handler: azure.fibo2048
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+
+  fft128:
+    handler: azure.fft128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fft256:
+    handler: azure.fft256
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fft512:
+    handler: azure.fft512
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fft1024:
+    handler: azure.fft1024
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  fft2048:
+    handler: azure.fft2048
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+
+  matrix128:
+    handler: azure.matrix128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  matrix256:
+    handler: azure.matrix256
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  matrix512:
+    handler: azure.matrix512
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  matrix1024:
+    handler: azure.matrix1024
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  matrix2048:
+    handler: azure.matrix2048
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+
+  pi128:
+    handler: azure.pi128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  pi256:
+    handler: azure.pi256
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  pi512:
+    handler: azure.pi512
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  pi1024:
+    handler: azure.pi1024
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  pi2048:
+    handler: azure.pi2048
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+
+  sleep128:
+    handler: azure.sleep128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  sleep256:
+    handler: azure.sleep256
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  sleep512:
+    handler: azure.sleep512
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  sleep1024:
+    handler: azure.sleep1024
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  sleep2048:
+    handler: azure.sleep2048
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+
+  unionfind128:
+    handler: azure.unionfind128
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  unionfind256:
+    handler: azure.unionfind256
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  unionfind512:
+    handler: azure.unionfind512
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  unionfind1024:
+    handler: azure.unionfind1024
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+  unionfind2048:
+    handler: azure.unionfind2048
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
